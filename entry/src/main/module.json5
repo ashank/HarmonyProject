@@ -32,6 +32,11 @@
           }
         ]
       }
+    ],
+
+    //权限的申请
+    "requestPermissions": [
+
     ]
   }
 }
