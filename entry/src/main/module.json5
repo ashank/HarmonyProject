@@ -1,6 +1,7 @@
 {
   "module": {
     "name": "entry",
+    //- entry：应用的主模块。- feature：应用的动态特性模块。- har：静态共享包模块。- shared：动态共享包模块。
     "type": "entry",
     "description": "$string:module_desc",
     "mainElement": "EntryAbility",
@@ -8,7 +9,9 @@
       "phone",
       "tablet"
     ],
+    //标识当前Module是否在用户主动安装的时候安装
     "deliveryWithInstall": true,
+    //标识当前Module是否支持免安装特性。元服务为true
     "installationFree": false,
     "pages": "$profile:main_pages",
     "abilities": [
@@ -21,6 +24,46 @@
         "startWindowIcon": "$media:startIcon",
         "startWindowBackground": "$color:start_window_background",
         "exported": true,
+        "launchType": "multiton",
+        //自定义权限
+        "permissions": ["ohos.permission.ACCELEROMETER"],
+        //标识当前UIAbility组件是否支持跨端迁移。
+        "continuable": false,
+        //标识当前UIAbility组件的长时任务集合，指定用于满足特定类型的长时任务。
+        //- dataTransfer：通过网络/对端设备进行数据下载、备份、分享、传输等。
+        //- audioPlayback：音频播放。
+        //- audioRecording：录音。
+        //- location：定位、导航。
+        //- bluetoothInteraction：蓝牙扫描、连接、传输（穿戴）。
+        //- multiDeviceConnection：多设备互联。
+        //- wifiInteraction：Wi-Fi扫描、连接、传输（克隆多屏）。
+        //- voip：音视频电话、VoIP。
+        //- taskKeeping：计算。
+        "backgroundModes": ["audioPlayback"],
+        //标识当前UIAbility组件销毁后，是否从任务列表中移除任务。
+        "removeMissionAfterTerminate": false,
+
+        //标识当前UIAbility组件启动时的方向
+        //- unspecified：未指定方向，由系统自动判断显示方向。
+        //- landscape：横屏。
+        //- portrait：竖屏。
+        //- landscape_inverted：反向横屏。
+        //- portrait_inverted：反向竖屏。
+        //- auto_rotation：随传感器旋转。
+        //- auto_rotation_landscape：传感器横屏旋转，包括横屏和反向横屏。
+        //- auto_rotation_portrait：传感器竖屏旋转，包括竖屏和反向竖屏。
+        //- auto_rotation_restricted：传感器开关打开，方向可随传感器旋转。
+        //- auto_rotation_landscape_restricted：传感器开关打开，方向可随传感器旋转为横屏， 包括横屏和反向横屏。
+        //- auto_rotation_portrait_restricted：传感器开关打开，方向随可传感器旋转为竖屏， 包括竖屏和反向竖屏。
+        //- locked：传感器开关关闭，方向锁定。
+        "orientation": "auto_rotation",
+        //标识当前UIAbility组件所支持的窗口模式。支持的取值如下：
+        //- fullscreen：全屏模式。
+        //- split：分屏模式。
+        //- floating：悬浮窗模式。
+        "supportWindowMode": ["fullscreen", "split", "floating"],
+        //标识当前UIAbility组件是否在最近任务列表中显示。不支持三方应用配置
+        "excludeFromMissions": true,
         "skills": [
           {
             "entities": [
@@ -28,15 +71,47 @@
             ],
             "actions": [
               "action.system.home"
+            ],
+            "uris": [
+              {
+                "scheme":"http",
+                "host":"example.com",
+                "port":"80",
+                "path":"path",
+                "type": "text/*"
+              },
             ]
           }
         ]
       }
     ],
 
-    //权限的申请
-    "requestPermissions": [
+    //标识系统资源hap定义的权限，不支持应用自定义权限。
+    "definePermissions": [
 
-    ]
+    ],
+
+    //标识当前应用运行时需向系统申请的权限集合。
+    "requestPermissions": [
+      {
+        "name": "ohos.abilitydemo.permission.PROVIDER",
+        "reason": "$string:reason",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "inuse"
+        }
+      }
+    ],
+
+    //标识当前模块运行时依赖的共享库列表。
+    "dependencies": [
+
+    ],
+
+    //标识当前Module的多进程配置项。支持的取值如下：- nonisolationFirst：优先在非独立进程中运行.- isolationFirst：优先在独立进程中运行。- isolationOnly：只在独立进程中运行。- nonisolationOnly：只在非独立进程中运行。
+    "isolationMode": "nonisolationFirst"
+
   }
 }

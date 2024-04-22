@@ -2,5 +2,9 @@
   "src": [
     "pages/SplashScreenPage",
     "pages/MainPage"
-  ]
+  ],
+  "window": {
+    "designWidth": 720,
+    "autoDesignWidth": false
+  }
 }
