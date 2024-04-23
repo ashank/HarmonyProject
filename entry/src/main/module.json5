@@ -17,7 +17,7 @@
         "srcEntry": "./ets/entryability/EntryAbility.ts",
         "description": "$string:ability_desc",
         "icon": "$media:icon",
-        "label": "$string:ability_label",
+        "label": "$string:copyright_title1",
         "startWindowIcon": "$media:startIcon",
         "startWindowBackground": "$color:start_window_background",
         "exported": true,
@@ -32,6 +32,31 @@
           }
         ]
       }
+    ],
+    "extensionAbilities": [
+            {
+              "name": "EntryAbility2",
+              "srcEntry": "./ets/entryability/EntryAbility2.ts",
+              "description": "$string:ability_desc",
+              "icon": "$media:ic_advertise",
+              "label": "$string:copyright_title",
+              "type": "window",
+              "permissions": ["ohos.abilitydemo.permission.PROVIDER"],
+              "readPermission": "",
+              "writePermission": "",
+              "exported": true,
+              "uri":"scheme://authority/path/query",
+              "skills": [
+                {
+                  "entities": [
+                    "entity.system.home"
+                  ],
+                  "actions": [
+                    "action.system.home"
+                  ]
+                }
+              ]
+            }
     ]
   }
 }

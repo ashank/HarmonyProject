@@ -82,7 +82,7 @@ struct SkipButton {
         .onClick(() => {
           router.replaceUrl({
             url: CommonConstants.MAIN_PAGE_URL
-          });
+          },null);
         })
     }
   }
