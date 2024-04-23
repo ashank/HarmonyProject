@@ -41,9 +41,7 @@ struct SplashScreenPage {
     this.intervalID = setInterval(() => {
       this.pageShowTime += CommonConstants.INCREMENT_VALUE;
       if (this.pageShowTime > CommonConstants.DELAY_SECONDS) {
-        router.replaceUrl({
-          url: CommonConstants.MAIN_PAGE_URL
-        });
+        gotoMain()
       }
     }, CommonConstants.INTERVAL_DELAY);
   }
@@ -80,13 +78,13 @@ struct SkipButton {
         .border({ width: CommonConstants.SKIP_TEXT_BORDER_WIDTH })
         .borderColor($r('app.color.rect_stroke'))
         .onClick(() => {
-          router.replaceUrl({
-            url: CommonConstants.MAIN_PAGE_URL
-          },null);
+
+          gotoMain()
         })
     }
   }
 }
+
 
 @Component
 struct AdvertiseIcon {
@@ -102,4 +100,12 @@ struct AdvertiseIcon {
     }
     .margin($r('app.float.advertise_icon_margin'))
   }
+}
+
+
+function gotoMain() {
+  //跳转到首页
+  router.replaceUrl({
+    url: CommonConstants.MAIN_PAGE_URL
+  });
 }
