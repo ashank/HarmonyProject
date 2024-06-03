@@ -1,5 +1,6 @@
 import { CommonConstants } from '../constants/CommonConstants';
 import { ListDataItem } from '../viewmodel/ListDataItem';
+import Item from './Item';
 
 /**
  * The MainPage that is routed as the SplashScreenPage.
@@ -36,35 +37,25 @@ struct MainPage {
   }
 
   build() {
-    Column() {
-      Scroll() {
-        Column() {
+        Column({space:30}) {
+
+          Button('List')
 
           List(){
             ForEach(this.data,(item:ListDataItem) => {
               ListItem() {
-                Row() {
-                  Image($r('app.media.app_icon'))
-                    .width(40)
-                    .height(40)
-                    .margin(10)
-                  Text(item.name).fontSize(20)
-                }
-                .width('100%')
-                .justifyContent(FlexAlign.Start)
+                Item({content:item.name})
               }
-
             },(item:ListDataItem) => item.key.toString()
             )
           }
-          .width('100%')
-          .height('100%')
           .alignListItem(ListItemAlign.Center)
           .margin(0|0|0|0)
-        }
+        }.width('100%')
+        .height('100%')
+        .backgroundColor($r('app.color.start_window_background'))
         .alignItems(HorizontalAlign.Start)
-      }
-    }
-    .backgroundColor($r('app.color.start_window_background'))
+
   }
+
 }

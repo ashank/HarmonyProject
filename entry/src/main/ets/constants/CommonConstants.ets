@@ -48,6 +48,11 @@ export class CommonConstants {
   static readonly MAIN_PAGE_URL: string = 'pages/MainPage';
 
   /**
+   * Main page url.
+   */
+  static readonly INDEX_PAGE_URL: string = 'pages/IndexPage';
+
+  /**
    * Copyright area column width.
    */
   static readonly COPYRIGHT_AREA_COLUMN_WIDTH: string = '100%';
