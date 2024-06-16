@@ -22,7 +22,7 @@ struct IndexPage {
           Row(){
             Button('WaterFlow').onClick((event:ClickEvent) =>{
               router.replaceUrl(
-                {url:CommonConstants.MAIN_PAGE_URL}
+                {url:CommonConstants.WATER_FLOW_PAGE_URL}
                 ,(err) => {
                 if (err) {
                   console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);

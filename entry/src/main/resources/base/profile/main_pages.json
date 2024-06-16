@@ -3,7 +3,8 @@
     "pages/SplashScreenPage",
     "pages/MainPage",
     "pages/IndexPage",
-    "pages/GridPage"
+    "pages/GridPage",
+    "pages/WaterFlowPage"
   ],
   "window": {
     "designWidth": 720,
