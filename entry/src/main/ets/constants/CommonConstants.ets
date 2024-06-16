@@ -52,6 +52,12 @@ export class CommonConstants {
    */
   static readonly INDEX_PAGE_URL: string = 'pages/IndexPage';
 
+
+  /**
+   * Main page url.
+   */
+  static readonly GRID_PAGE_URL: string = 'pages/GridPage';
+
   /**
    * Copyright area column width.
    */

@@ -2,7 +2,8 @@
   "src": [
     "pages/SplashScreenPage",
     "pages/MainPage",
-    "pages/IndexPage"
+    "pages/IndexPage",
+    "pages/GridPage"
   ],
   "window": {
     "designWidth": 720,

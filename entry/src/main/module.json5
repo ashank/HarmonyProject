@@ -102,6 +102,16 @@
           ],
           "when": "inuse"
         }
+      },
+      {
+        "name": "ohos.permission.INTERNET",
+        "reason": "$string:permission_net",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "inuse"
+        }
       }
     ],
 

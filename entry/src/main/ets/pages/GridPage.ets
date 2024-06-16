@@ -1,13 +1,13 @@
 import { CommonConstants } from '../constants/CommonConstants';
 import { ListDataItem } from '../viewmodel/ListDataItem';
-import ListItemView from './ListItemView';
+import GridItemView from './GridItemView';
 
 /**
  * The MainPage that is routed as the SplashScreenPage.
  */
 @Entry
 @Component
-struct MainPage {
+struct GridPage {
   private data: Array<object> = [
     new ListDataItem('小明', $r("app.media.app_icon")),
     new ListDataItem('如果', $r("app.media.app_icon")),
@@ -38,20 +38,29 @@ struct MainPage {
 
   build() {
         Column() {
-          List({space:12}){
+          Grid(){
             ForEach(this.data,(item:ListDataItem) => {
-              ListItemView({content:item.name})
+              ForEach(this.data,(item:ListDataItem) => {
+                GridItemView({content:item.name})
+              },(item:ListDataItem) => item.key.toString()
+              )
             },(item:ListDataItem) => item.key.toString()
             )
-          }
+          }.cachedCount(10)
+          .layoutDirection(GridDirection.Row)
           .scrollBar(BarState.Off)
-          .alignListItem(ListItemAlign.Center)
           .margin(12|0|12|0)
+          .columnsTemplate('1fr 1fr 1fr')
+          .columnsGap(10)
+          .rowsGap(10)
         }.width('100%')
         .height('100%')
         .backgroundColor($r('app.color.start_window_background'))
         .alignItems(HorizontalAlign.Start)
 
+  }
+
+  onBackPress(): boolean | void {
   }
 
 }

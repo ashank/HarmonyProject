@@ -20,8 +20,7 @@ struct IndexPage {
       Scroll() {
         Column() {
           Row(){
-            Button('瀑布流').onClick((event:ClickEvent) =>{
-
+            Button('WaterFlow').onClick((event:ClickEvent) =>{
               router.replaceUrl(
                 {url:CommonConstants.MAIN_PAGE_URL}
                 ,(err) => {
@@ -33,7 +32,33 @@ struct IndexPage {
               })
 
             })
-            Button('List')
+
+            Button('List').onClick((event:ClickEvent) =>{
+              router.replaceUrl(
+                {url:CommonConstants.MAIN_PAGE_URL}
+                ,(err) => {
+                if (err) {
+                  console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
+                  return;
+                }
+                console.info('replaceUrl success');
+              })
+
+            })
+
+            Button('Grid').onClick((event:ClickEvent) =>{
+              router.replaceUrl(
+                {url:CommonConstants.GRID_PAGE_URL}
+                ,(err) => {
+                if (err) {
+                  console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
+                  return;
+                }
+                console.info('replaceUrl success');
+              })
+
+            })
+
           }.backgroundColor('#F2F2F2').width('100%').padding(12|10|12|10)
 
         }
