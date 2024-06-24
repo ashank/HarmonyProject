@@ -1,7 +1,10 @@
 {
   "src": [
     "pages/SplashScreenPage",
-    "pages/MainPage"
+    "pages/MainPage",
+    "pages/IndexPage",
+    "pages/GridPage",
+    "pages/WaterFlowPage"
   ],
   "window": {
     "designWidth": 720,

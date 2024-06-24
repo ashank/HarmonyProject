@@ -7,6 +7,11 @@
     {
       "name": "reason",
       "value": "请求权限"
+    },
+
+    {
+      "name": "permission_net",
+      "value": "网络权限"
     }
   ]
 }

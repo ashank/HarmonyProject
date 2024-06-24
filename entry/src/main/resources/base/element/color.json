@@ -19,6 +19,15 @@
     {
       "name": "rect_stroke",
       "value": "#99FFFFFF"
+    },
+    {
+      "name": "red",
+      "value": "#FF0000"
+    },
+
+    {
+      "name": "666666",
+      "value": "#666666"
     }
   ]
 }
