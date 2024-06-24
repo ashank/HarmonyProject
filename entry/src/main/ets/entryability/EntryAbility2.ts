@@ -7,7 +7,7 @@ import window from '@ohos.window';
 /**
  * Lift cycle management of Ability.
  */
-export default class EntryAbility extends UIAbility {
+export default class EntryAbility2 extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
   }
@@ -20,7 +20,7 @@ export default class EntryAbility extends UIAbility {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent("pages/SplashScreenPage", (err, data) => {
+    windowStage.loadContent("pages/MainPage2", (err, data) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;

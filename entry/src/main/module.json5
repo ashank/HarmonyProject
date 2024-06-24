@@ -4,7 +4,7 @@
     //- entry：应用的主模块。- feature：应用的动态特性模块。- har：静态共享包模块。- shared：动态共享包模块。
     "type": "entry",
     "description": "$string:module_desc",
-    "mainElement": "EntryAbility",
+    //"mainElement": "EntryAbility",
     "deviceTypes": [
       "phone",
       "tablet"
@@ -16,15 +16,15 @@
     "pages": "$profile:main_pages",
     "abilities": [
       {
-        "name": "EntryAbility",
-        "srcEntry": "./ets/entryability/EntryAbility.ts",
+        "name": "EntryAbility2",
+        "srcEntry": "./ets/entryability/EntryAbility2.ts",
         "description": "$string:ability_desc",
         "icon": "$media:icon",
         "label": "$string:copyright_title1",
         "startWindowIcon": "$media:startIcon",
         "startWindowBackground": "$color:start_window_background",
         "exported": true,
-        "launchType": "multiton",
+        "launchType": "singleton",
         //自定义权限
         "permissions": ["ohos.permission.ACCELEROMETER"],
         //标识当前UIAbility组件是否支持跨端迁移。
@@ -70,7 +70,7 @@
               "entity.system.home"
             ],
             "actions": [
-              "action.system.home"
+              "ohos.want.action.home"
             ],
             "uris": [
               {
@@ -80,6 +80,34 @@
                 "path":"path",
                 "type": "text/*"
               },
+            ]
+          }
+        ]
+      },
+      {
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ts",
+        "description": "你好",
+        "icon": "$media:ic_video",
+        "label": "$string:copyright_title",
+        "startWindowIcon": "$media:ic_video",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "launchType": "singleton",
+        "permissions": ["ohos.permission.ACCELEROMETER"],
+        "continuable": false,
+        "backgroundModes": ["location"],
+        "removeMissionAfterTerminate": false,
+        "orientation": "auto_rotation",
+        "supportWindowMode": ["fullscreen", "split", "floating"],
+        "excludeFromMissions": true,
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "ohos.want.action.home"
             ]
           }
         ]
@@ -95,10 +123,11 @@
     "requestPermissions": [
       {
         "name": "ohos.abilitydemo.permission.PROVIDER",
-        "reason": "$string:reason",
+        "reason": "$string:copyright_title1",
         "usedScene": {
           "abilities": [
-            "EntryAbility"
+            "EntryAbility",
+            "EntryAbility2"
           ],
           "when": "inuse"
         }
@@ -111,33 +140,11 @@
     ],
 
     //标识当前Module的多进程配置项。支持的取值如下：- nonisolationFirst：优先在非独立进程中运行.- isolationFirst：优先在独立进程中运行。- isolationOnly：只在独立进程中运行。- nonisolationOnly：只在非独立进程中运行。
-    "isolationMode": "nonisolationFirst"
+    "isolationMode": "nonisolationFirst",
 
-    ],
+
     "extensionAbilities": [
-            {
-              "name": "EntryAbility2",
-              "srcEntry": "./ets/entryability/EntryAbility2.ts",
-              "description": "$string:ability_desc",
-              "icon": "$media:ic_advertise",
-              "label": "$string:copyright_title",
-              "type": "window",
-              "permissions": ["ohos.abilitydemo.permission.PROVIDER"],
-              "readPermission": "",
-              "writePermission": "",
-              "exported": true,
-              "uri":"scheme://authority/path/query",
-              "skills": [
-                {
-                  "entities": [
-                    "entity.system.home"
-                  ],
-                  "actions": [
-                    "action.system.home"
-                  ]
-                }
-              ]
-            }
+
     ]
   }
 }
