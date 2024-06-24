@@ -2,7 +2,9 @@
   "src": [
     "pages/SplashScreenPage",
     "pages/MainPage",
+    "pages/MainPage2",
     "pages/IndexPage",
+
     "pages/GridPage",
     "pages/WaterFlowPage"
   ],
