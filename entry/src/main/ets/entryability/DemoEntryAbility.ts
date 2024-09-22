@@ -3,12 +3,11 @@ import hilog from '@ohos.hilog';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
-import BaseEntryAbility from './DemoEntryAbility';
 
 /**
  * Lift cycle management of Ability.
  */
-export default class EntryAbility extends BaseEntryAbility {
+export default abstract class BaseEntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
   }

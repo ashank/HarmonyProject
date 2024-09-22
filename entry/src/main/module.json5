@@ -16,8 +16,8 @@
     "pages": "$profile:main_pages",
     "abilities": [
       {
-        "name": "EntryAbility2",
-        "srcEntry": "./ets/entryability/EntryAbility2.ts",
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ts",
         "description": "$string:ability_desc",
         "icon": "$media:icon",
         "label": "$string:copyright_title1",
@@ -85,8 +85,8 @@
         ]
       },
       {
-        "name": "EntryAbility",
-        "srcEntry": "./ets/entryability/EntryAbility.ts",
+        "name": "EntryAbility2",
+        "srcEntry": "./ets/entryability/EntryAbility2.ts",
         "description": "你好",
         "icon": "$media:ic_video",
         "label": "$string:copyright_title",
@@ -121,17 +121,6 @@
 
     //标识当前应用运行时需向系统申请的权限集合。
     "requestPermissions": [
-      {
-        "name": "ohos.abilitydemo.permission.PROVIDER",
-        "reason": "$string:copyright_title1",
-        "usedScene": {
-          "abilities": [
-            "EntryAbility",
-            "EntryAbility2"
-          ],
-          "when": "inuse"
-        }
-      },
       {
         "name": "ohos.permission.INTERNET",
         "reason": "$string:permission_net",
